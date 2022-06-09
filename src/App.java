@@ -11,7 +11,7 @@ public class App {
 
         //ArrayList Nomor Rekening
         ArrayList <Akun> DataNasabah = new ArrayList <Akun>();
-        DataNasabah.add(new Akun("Budi", 297067891));
+        DataNasabah.add(new Akun("Budi", "0314865"));
 
         //deklarasi
         int idx = 0;
@@ -37,11 +37,11 @@ public class App {
             if (pil == 1){
                 clearscreen();
                 System.out.println("Menu Transfer Uang");
-                System.out.print("Silahkan Masukkan Nomor Rekening Tujuan (Max. 9) : ");
-                Transfer.norekeningtujuan = keyboard.nextInt();
+                System.out.print("Silahkan Masukkan Nomor Rekening Tujuan (Max. 7) : ");
+                Transfer.norekeningtujuan = keyboard.next();
 
                 for (Akun akun : DataNasabah) {
-                    if (akun.norekening == Transfer.norekeningtujuan){
+                    if (akun.norekening.equals(Transfer.norekeningtujuan)){
                         do {
                             System.out.print("Masukkan Jumlah Yang Ingin Di Transfer (tidak pakai titik maupun spasi) : ");
                             Transfer.ValueTF = keyboard.nextInt();
